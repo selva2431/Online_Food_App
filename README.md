@@ -14,20 +14,5 @@ Payment gateway integration for secure transactions
 Comprehensive admin dashboard for monitoring and analytics
 Usage:
 
-Clone the repository: git clone [repository URL]
-Navigate to the project directory: cd [project directory]
-Build the project: mvn clean install or ./gradlew build
-Run the application: java -jar target/[project-name].jar
-Inserting JSON Data:
-To insert JSON data into the application, follow these steps:
 
-Identify the endpoint or service responsible for handling JSON data.
-Prepare your JSON data with the required fields and values.
-Use tools like Postman or curl to send a POST request to the appropriate endpoint with the JSON data.
-Verify the successful insertion of data by checking the database or retrieving it through appropriate API endpoints.
-Contributing:
-Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
-
-License:
-This project is licensed under the [License Name] License - see the LICENSE.md file for details.
 
