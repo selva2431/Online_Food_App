@@ -12,9 +12,17 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "Delivery")
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Delivery {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,45 +42,6 @@ public class Delivery {
 	@Column(name = "deliveryStatus")
 	private String deliveryStatus;
 
-	public int getDeliveryId() {
-		return deliveryId;
-	}
-
-	public void setDeliveryId(int deliveryId) {
-		this.deliveryId = deliveryId;
-	}
-
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
-		this.order = order;
-	}
-
-	public int getDeliveryExecutiveId() {
-		return deliveryExecutiveId;
-	}
-
-	public void setDeliveryExecutiveId(int deliveryExecutiveId) {
-		this.deliveryExecutiveId = deliveryExecutiveId;
-	}
-
-	public Date getEstimatedDeliveryTime() {
-		return estimatedDeliveryTime;
-	}
-
-	public void setEstimatedDeliveryTime(Date estimatedDeliveryTime) {
-		this.estimatedDeliveryTime = estimatedDeliveryTime;
-	}
-
-	public String getDeliveryStatus() {
-		return deliveryStatus;
-	}
-
-	public void setDeliveryStatus(String deliveryStatus) {
-		this.deliveryStatus = deliveryStatus;
-	}
 
 	@Override
 	public String toString() {
