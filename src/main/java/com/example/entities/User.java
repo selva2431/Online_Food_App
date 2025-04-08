@@ -1,10 +1,6 @@
 package com.example.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,10 +17,19 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
 
+	@Column(name = "user_name",nullable = false)
 	private String username;
+
+	@Column(name = "email",nullable = false)
 	private String email;
+
+	@Column(name = "phone_number",nullable = false)
 	private String phoneNumber;
+
+	@Column(name = "address")
 	private String address;
+
+	@Column(name = "password")
 	private String password;
 
 
