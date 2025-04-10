@@ -32,6 +32,10 @@ public class User {
 	@Column(name = "password")
 	private String password;
 
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "role_id", nullable = false)
+	private Role role;
+
 
 	@Override
 	public String toString() {

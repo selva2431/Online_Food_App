@@ -1,5 +1,15 @@
 package com.example.payloads;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class RestaurantPayload {
 	private int restaurantId;
 	private String name;
@@ -7,45 +17,6 @@ public class RestaurantPayload {
 	private String cuisineType;
 	private double rating;
 
-	public int getRestaurantId() {
-		return restaurantId;
-	}
-
-	public void setRestaurantId(int restaurantId) {
-		this.restaurantId = restaurantId;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public String getCuisineType() {
-		return cuisineType;
-	}
-
-	public void setCuisineType(String cuisineType) {
-		this.cuisineType = cuisineType;
-	}
-
-	public double getRating() {
-		return rating;
-	}
-
-	public void setRating(double rating) {
-		this.rating = rating;
-	}
 
 	@Override
 	public String toString() {
