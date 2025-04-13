@@ -31,6 +31,10 @@ public class Item {
 	private int quantity;
 	private double price;
 
+	@ManyToOne
+	@JoinColumn(name = "restaurant_id")
+	private Restaurant restaurant;
+
 	@Override
 	public String toString() {
 		return "Item [itemId=" + itemId + ", order=" + order + ", name=" + name + ", quantity=" + quantity + ", price="

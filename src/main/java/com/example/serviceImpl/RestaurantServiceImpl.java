@@ -1,5 +1,6 @@
 package com.example.serviceImpl;
 
+import com.example.dto.RestaurantItemDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,4 +44,15 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public void deleteRestaurant(int restaurantId) {
 		restaurantRepository.deleteById(restaurantId);
 	}
+
+
+	public List<Restaurant> getRestaurantByCuisineType(String cuisineType) {
+		List<Restaurant> restaurants = restaurantRepository.findByCuisineType(cuisineType);
+		return restaurants;
+	}
+
+	public List<RestaurantItemDTO> searchWithItems(String cuisineType, Double rating, String location) {
+		return restaurantRepository.searchWithItems(cuisineType, rating, location);
+	}
+
 }

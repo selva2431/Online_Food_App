@@ -1,4 +1,6 @@
 package com.example.controllers;
+import com.example.dto.RestaurantItemDTO;
+import com.example.entities.Restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,5 +43,20 @@ public class RestaurantController {
     public ResponseEntity<Void> deleteRestaurant(@PathVariable int restaurantId) {
         restaurantService.deleteRestaurant(restaurantId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    @GetMapping("cusineType/{cuisineType}")
+    public ResponseEntity<List<Restaurant>> getRestaurant(@PathVariable String cuisineType){
+        List<Restaurant> result = restaurantService.getRestaurantByCuisineType(cuisineType);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<RestaurantItemDTO>> searchRestaurants(
+            @RequestParam(required = false) String cuisineType,
+            @RequestParam(required = false) Double rating,
+            @RequestParam(required = false) String location) {
+
+        List<RestaurantItemDTO> results = restaurantService.searchWithItems(cuisineType, rating, location);
+        return ResponseEntity.ok(results);
     }
 }

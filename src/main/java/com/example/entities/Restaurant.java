@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Restaurant")
 @Setter
@@ -28,6 +30,9 @@ public class Restaurant {
 
 	@Column(name = "rating")
 	private double rating;
+
+	@OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
+	private List<Item> items;
 
 
 	@Override
